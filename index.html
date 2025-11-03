@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DexPay - October 2025 Traction Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .grant-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 50px 40px;
+            background: #f8f9fa;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .metric-card.highlight {
+            border-left: 5px solid #10b981;
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        }
+        
+        .metric-value {
+            font-size: 3em;
+            font-weight: 700;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        
+        .metric-card.highlight .metric-value {
+            color: #10b981;
+        }
+        
+        .metric-label {
+            font-size: 1.1em;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .metric-description {
+            font-size: 0.95em;
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+        
+        .requirement-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .details-section {
+            padding: 50px 40px;
+        }
+        
+        .details-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #1f2937;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .info-item {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #6b7280;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 1.1em;
+            color: #1f2937;
+            word-break: break-all;
+        }
+        
+        .verification-section {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .verification-section h3 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .explorer-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px 10px 10px 0;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .explorer-link:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+        
+        .success-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .methodology {
+            background: #fffbeb;
+            border: 2px solid #fbbf24;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .methodology h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+        
+        .methodology p {
+            color: #78350f;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 DexPay Traction Report</h1>
+            <p class="subtitle">October 2025 Performance Metrics</p>
+            <div class="grant-badge">Thrive Protocol Milestone 3 Submission</div>
+        </div>
+        
+        <div class="success-banner">
+            ✅ Milestone Requirement MET: 1,722 Monthly Active Users (Target: 1,500+)
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card highlight">
+                <div class="metric-label">Monthly Active Users</div>
+                <div class="metric-value">1,722</div>
+                <div class="metric-description">Unique wallets interacting with DexPay</div>
+                <div class="requirement-badge">✓ 115% of Target</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Inbound Transactions</div>
+                <div class="metric-value">4,061</div>
+                <div class="metric-description">Calls to smart contract</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Outbound Transactions</div>
+                <div class="metric-value">3,438</div>
+                <div class="metric-description">Payments from contract</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Total Transactions</div>
+                <div class="metric-value">7,499</div>
+                <div class="metric-description">Combined contract activity</div>
+            </div>
+        </div>
+        
+        <div class="details-section">
+            <h2>📋 Project Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Project Name</div>
+                    <div class="info-value">DexPay</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Network</div>
+                    <div class="info-value">Hedera Mainnet</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Reporting Period</div>
+                    <div class="info-value">October 1-31, 2025</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Smart Contract ID</div>
+                    <div class="info-value">0.0.9392720</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Contract EVM Address</div>
+                    <div class="info-value">0x00000000000000000000000000000000008f5690</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Data Collection Date</div>
+                    <div class="info-value">November 3, 2025</div>
+                </div>
+            </div>
+            
+            <div class="methodology">
+                <h3>📊 Methodology</h3>
+                <p><strong>Monthly Active Users (MAU) Definition:</strong> Unique wallet addresses that interacted with the DexPay smart contract during October 2025. This includes both users sending transactions to the contract and users receiving payments from the contract.</p>
+                <p><strong>Data Source:</strong> Hedera Mirror Node REST API - Official Hedera network data aggregation service</p>
+                <p><strong>Verification:</strong> All data is publicly verifiable on-chain through Hedera explorers. Raw transaction data totaling 11.16 MB has been collected and is available for audit.</p>
+            </div>
+            
+            <div class="verification-section">
+                <h3>🔗 On-Chain Verification Links</h3>
+                <p style="margin-bottom: 20px; color: #1e40af;">All metrics are publicly verifiable through the following Hedera blockchain explorers:</p>
+                <a href="https://hashscan.io/mainnet/contract/0.0.9392720" class="explorer-link" target="_blank">
+                    View on HashScan →
+                </a>
+                <a href="https://hashscan.io/mainnet/contract/0.0.9392720/calls" class="explorer-link" target="_blank">
+                    View Contract Calls →
+                </a>
+                <a href="https://mainnet-public.mirrornode.hedera.com/api/v1/contracts/0.0.9392720/results" class="explorer-link" target="_blank">
+                    Mirror Node API →
+                </a>
+            </div>
+            
+            <h2>📈 Growth Highlights</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Achievement</div>
+                    <div class="info-value">Exceeded 1,500 MAU requirement by 222 users (14.8% over target)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Average Daily Active Users</div>
+                    <div class="info-value">~56 unique users per day</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Average Transactions per Day</div>
+                    <div class="info-value">~242 transactions per day</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">User Engagement</div>
+                    <div class="info-value">Average 4.4 transactions per user</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>DexPay on Hedera</strong></p>
+            <p>Milestone 3: Traction - Thrive Protocol Grant</p>
+            <p>Generated: November 3, 2025</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                Data collected via Hedera Mirror Node API<br>
+                All metrics are publicly verifiable on-chain
+            </p>
+        </div>
+    </div>
+</body>
+</html>
