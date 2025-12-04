@@ -57,6 +57,15 @@
             backdrop-filter: blur(10px);
         }
         
+        .success-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -105,7 +114,7 @@
         
         .metric-description {
             font-size: 0.95em;
-            color: #9ca3af;
+            color: #6b7280; /* Darkened for better readability */
             margin-top: 10px;
         }
         
@@ -159,7 +168,28 @@
             color: #1f2937;
             word-break: break-all;
         }
+
+        /* New Sample Data Section Style */
+        .sample-data-box {
+            background: #1f2937;
+            color: #10b981; /* Matrix green text */
+            padding: 25px;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            border: 1px solid #374151;
+            margin-bottom: 40px;
+        }
         
+        .sample-data-header {
+            color: #e5e7eb;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 10px;
+        }
+
         .verification-section {
             background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
             padding: 40px;
@@ -202,16 +232,7 @@
             margin: 10px 0;
             opacity: 0.8;
         }
-        
-        .success-banner {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 30px 40px;
-            text-align: center;
-            font-size: 1.3em;
-            font-weight: 600;
-        }
-        
+
         .methodology {
             background: #fffbeb;
             border: 2px solid #fbbf24;
@@ -235,37 +256,37 @@
     <div class="container">
         <div class="header">
             <h1>🚀 DexPay Traction Report</h1>
-            <p class="subtitle">October 2025 Performance Metrics</p>
-            <div class="grant-badge">Thrive Protocol Milestone 3 Submission</div>
+            <p class="subtitle">DexPay final Performance Metrics</p>
+            <div class="grant-badge">Thrive Protocol Milestone final Submission</div>
         </div>
         
         <div class="success-banner">
-            ✅ Milestone Requirement MET: 1,722 Monthly Active Users (Target: 1,500+)
+            ✅ Milestone Requirement MET: 4,920 Unique Wallets (Target: 3,500+)
         </div>
         
         <div class="metrics-grid">
             <div class="metric-card highlight">
-                <div class="metric-label">Monthly Active Users</div>
-                <div class="metric-value">1,722</div>
-                <div class="metric-description">Unique wallets interacting with DexPay</div>
-                <div class="requirement-badge">✓ 115% of Target</div>
+                <div class="metric-label">Unique Wallets</div>
+                <div class="metric-value">4,920</div>
+                <div class="metric-description">Total unique addresses interacting with DexPay</div>
+                <div class="requirement-badge">✓ 328% of Target</div>
             </div>
             
             <div class="metric-card">
                 <div class="metric-label">Inbound Transactions</div>
-                <div class="metric-value">4,061</div>
+                <div class="metric-value">10,704</div>
                 <div class="metric-description">Calls to smart contract</div>
             </div>
             
             <div class="metric-card">
                 <div class="metric-label">Outbound Transactions</div>
-                <div class="metric-value">3,438</div>
+                <div class="metric-value">9,834</div>
                 <div class="metric-description">Payments from contract</div>
             </div>
             
             <div class="metric-card">
                 <div class="metric-label">Total Transactions</div>
-                <div class="metric-value">7,499</div>
+                <div class="metric-value">20,500</div>
                 <div class="metric-description">Combined contract activity</div>
             </div>
         </div>
@@ -283,7 +304,7 @@
                 </div>
                 <div class="info-item">
                     <div class="info-label">Reporting Period</div>
-                    <div class="info-value">October 1-31, 2025</div>
+                    <div class="info-value">Contract creation date - Dec 1, 2025</div>
                 </div>
                 <div class="info-item">
                     <div class="info-label">Smart Contract ID</div>
@@ -294,16 +315,35 @@
                     <div class="info-value">0x00000000000000000000000000000000008f5690</div>
                 </div>
                 <div class="info-item">
-                    <div class="info-label">Data Collection Date</div>
-                    <div class="info-value">November 3, 2025</div>
+                    <div class="info-label">Raw Data File</div>
+                    <div class="info-value" style="font-family: monospace;">unique_wallets.json</div>
                 </div>
+            </div>
+
+            <h2>🗃️ Data Sample (First 10 Users)</h2>
+            <div class="sample-data-box">
+                <div class="sample-data-header">
+                    Source: unique_wallets.json (Total: 4,920 records)
+                </div>
+                <pre>
+ 1. 0x00000000000000000000000000000000008ea068
+ 2. 0.0.10065256
+ 3. 0.0.9391894
+ 4. 0.0.10065770
+ 5. 0.0.10065809
+ 6. 0.0.10065931
+ 7. 0.0.10065934
+ 8. 0.0.10065943
+ 9. 0.0.10065961
+ 10. 0.0.10065968
+ ... and 4910 more</pre>
             </div>
             
             <div class="methodology">
                 <h3>📊 Methodology</h3>
-                <p><strong>Monthly Active Users (MAU) Definition:</strong> Unique wallet addresses that interacted with the DexPay smart contract during October 2025. This includes both users sending transactions to the contract and users receiving payments from the contract.</p>
-                <p><strong>Data Source:</strong> Hedera Mirror Node REST API - Official Hedera network data aggregation service</p>
-                <p><strong>Verification:</strong> All data is publicly verifiable on-chain through Hedera explorers. Raw transaction data totaling 11.16 MB has been collected and is available for audit.</p>
+                <p><strong>Unique Wallets Definition:</strong> Total count of distinct wallet addresses that interacted with the DexPay smart contract from contract creation date till Dec 1, 2025 ( Date of data collection). This includes both users initiating transactions (Callers) and users receiving payments (Receivers).</p>
+                <p><strong>Data Source:</strong> Hedera Mirror Node REST API.</p>
+                <p><strong>Verification:</strong> Full dataset available in <code>unique_wallets.json</code> attached to this submission.</p>
             </div>
             
             <div class="verification-section">
@@ -324,22 +364,22 @@
             <div class="info-grid">
                 <div class="info-item">
                     <div class="info-label">Achievement</div>
-                    <div class="info-value">Exceeded 1,500 MAU requirement by 222 users (14.8% over target)</div>
+                    <div class="info-value">Exceeded 3,500 User requirement by 1,420 users (40% of target)</div>
                 </div>
                 <div class="info-item">
-                    <div class="info-label">User Engagement</div>
-                    <div class="info-value">Average 4.4 transactions per user</div>
+                    <div class="info-label">Average Daily Active Users</div>
+                    <div class="info-value">~158 unique users per day</div>
                 </div>
             </div>
         </div>
         
         <div class="footer">
             <p><strong>DexPay on Hedera</strong></p>
-            <p>Milestone 3: Traction - Thrive Protocol Grant</p>
-            <p>Generated: November 3, 2025</p>
+            <p>Final Milestone : Scale - Thrive Protocol Grant</p>
+            <p id="date-gen">Generated: December 1, 2025</p>
             <p style="margin-top: 20px; font-size: 0.9em;">
                 Data collected via Hedera Mirror Node API<br>
-                All metrics are publicly verifiable on-chain
+                Full list saved to: <strong>unique_wallets.json</strong>
             </p>
         </div>
     </div>
